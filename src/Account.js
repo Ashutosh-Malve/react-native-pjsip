@@ -1,10 +1,9 @@
-import AccountRegistration from './AccountRegistration'
+import AccountRegistration from './AccountRegistration';
 
 /**
  * This describes account configuration and registration status
  */
 export default class Account {
-
     constructor(data) {
         this._data = data;
         this._registration = new AccountRegistration(data['registration']);
@@ -97,7 +96,7 @@ export default class Account {
      * @returns {String}
      */
     getRegServer() {
-        return this._data.regServer || "";
+        return this._data.regServer || '';
     }
 
     /**

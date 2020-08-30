@@ -5,31 +5,34 @@
     "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "author": {
-    "name": "Vadim Ruban",
-    "email": "vadim.ruban@carusto.com"
+    "name": "Tariq86",
+    "email": "tariq.86@pm.me"
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/datso/react-native-pjsip/issues"
+    "url": "https://github.com/tariq86/react-native-pjsip/issues"
   },
   "dependencies": {
-    "events": "1.1.0"
+    "events": "3.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.0",
-    "eslint": "^5.6.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
     "eslint-plugin-react-native": "^3.3.0",
-    "gh-pages": "^2.0.0",
+    "gh-pages": "^3.1.0",
     "jsdoc": "^3.5.5",
-    "minami": "^1.2.3"
+    "minami": "^1.2.3",
+    "prettier": "^2.1.1"
   },
   "name": "react-native-pjsip",
   "description": "PJSIP module for React Native",
-  "homepage": "https://github.com/datso/react-native-pjsip",
+  "homepage": "https://github.com/tariq86/react-native-pjsip",
   "keywords": [
     "react-component",
     "react-native",
@@ -41,11 +44,11 @@
   "nativePackage": true,
   "optionalDependencies": {},
   "peerDependencies": {
-    "react-native": ">=0.40.0"
+    "react-native": ">=0.60.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/datso/react-native-pjsip.git"
+    "url": "git+https://github.com/tariq86/react-native-pjsip.git"
   },
-  "version": "2.8.0"
+  "version": "3.0.0"
 }

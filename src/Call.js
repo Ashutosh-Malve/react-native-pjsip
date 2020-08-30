@@ -4,13 +4,13 @@
 export default class Call {
 
     constructor({
-            id, callId, accountId,
-            localContact, localUri, remoteContact, remoteUri,
-            state, stateText, held, muted, speaker,
-            connectDuration, totalDuration,
-            remoteOfferer, remoteAudioCount, remoteVideoCount, audioCount, videoCount,
-            lastStatusCode, lastReason, media, provisionalMedia
-        }) {
+        id, callId, accountId,
+        localContact, localUri, remoteContact, remoteUri,
+        state, stateText, held, muted, speaker,
+        connectDuration, totalDuration,
+        remoteOfferer, remoteAudioCount, remoteVideoCount, audioCount, videoCount,
+        lastStatusCode, lastReason, media, provisionalMedia
+    }) {
         let remoteNumber = null;
         let remoteName = null;
 
@@ -97,7 +97,7 @@ export default class Call {
         let offset = time - this._constructionTime;
 
         return this._totalDuration + offset;
-    };
+    }
 
     /**
      * Up-to-date call connected duration (zero when call is not established)
@@ -105,7 +105,7 @@ export default class Call {
      * @returns {int}
      */
     getConnectDuration() {
-        if (this._connectDuration < 0 || this._state == "PJSIP_INV_STATE_DISCONNECTED") {
+        if (this._connectDuration < 0 || this._state == 'PJSIP_INV_STATE_DISCONNECTED') {
             return this._connectDuration;
         }
 
@@ -123,7 +123,7 @@ export default class Call {
      */
     getFormattedTotalDuration() {
         return this._formatTime(this.getTotalDuration());
-    };
+    }
 
     /**
      * Call duration in "MM:SS" format.
@@ -133,7 +133,7 @@ export default class Call {
      */
     getFormattedConnectDuration() {
         return this._formatTime(this.getConnectDuration());
-    };
+    }
 
     /**
      * Local Contact.
@@ -196,7 +196,7 @@ export default class Call {
         } else if (this._remoteNumber) {
             return this._remoteNumber;
         } else {
-            return this._remoteUri
+            return this._remoteUri;
         }
     }
 
@@ -375,18 +375,18 @@ export default class Call {
      */
     _formatTime(seconds) {
         if (isNaN(seconds) || seconds < 0) {
-            return "00:00";
+            return '00:00';
         }
         var hours = parseInt( seconds / 3600 ) % 24;
         var minutes = parseInt( seconds / 60 ) % 60;
-        var result = "";
+        var result = '';
         seconds = seconds % 60;
 
         if (hours > 0) {
-            result += (hours < 10 ? "0" + hours : hours) + ":";
+            result += (hours < 10 ? '0' + hours : hours) + ':';
         }
 
-        result += (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+        result += (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds  < 10 ? '0' + seconds : seconds);
         return result;
-    };
+    }
 }

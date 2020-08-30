@@ -4,13 +4,13 @@
 export default class Message {
 
     constructor({
-            accountId,
-            contactUri,
-            fromUri,
-            toUri,
-            body,
-            contentType
-        }) {
+        accountId,
+        contactUri,
+        fromUri,
+        toUri,
+        body,
+        contentType
+    }) {
         let fromNumber = null;
         let fromName = null;
 

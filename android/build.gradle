@@ -15,22 +15,21 @@ repositories {
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
     }
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
-    compile "com.google.code.gson:gson:2.+"
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.google.code.gson:gson:2.+"
+    implementation fileTree(dir: "libs", include: ["*.jar"])
 }

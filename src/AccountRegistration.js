@@ -8,7 +8,7 @@ export default class AccountRegistration {
     _active;
     _reason;
 
-    constructor({status, statusText, active, reason}) {
+    constructor({ status, statusText, active, reason }) {
         this._status = status;
         this._statusText = statusText;
         this._active = active;
@@ -55,7 +55,7 @@ export default class AccountRegistration {
     }
 
     toJson() {
-        return  {
+        return {
             status: this._status,
             statusText: this._statusText,
             active: this._active,
