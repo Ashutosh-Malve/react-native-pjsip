@@ -304,7 +304,7 @@ public class PjActions {
                     value.put(mapKey, map.getBoolean(mapKey));
                     break;
                 case Array:
-                    value.put(mapKey, map.getArray(mapKey).toArrayList());
+                    value.put(mapKey, map.getArray(mapKey));
                     break;
                 case Map:
                     value.put(mapKey, formatMap(map.getMap(mapKey)));
