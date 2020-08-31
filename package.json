@@ -2,13 +2,24 @@
   "scripts": {
     "postinstall": "bash libs.sh",
     "lint": "eslint ./src",
-    "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
+    "generate-docs": "jsdoc --configure .jsdoc.json --verbose"
   },
-  "author": "Tariq86",
-  "license": "GPL-3.0",
+  "author": {
+    "name": "Vadim Ruban",
+    "email": "vadim.ruban@carusto.com"
+  },
+  "contributors": [
+    {
+      "name": "Tariq86",
+      "email": "tariq.86@pm.me",
+      "url": "https://github.com/tariq86"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/tariq86/react-native-pjsip/issues"
   },
+  "homepage": "https://github.com/tariq86/react-native-pjsip",
+  "license": "GPL-3.0",
   "dependencies": {
     "events": "3.2.0"
   },
@@ -29,7 +40,6 @@
   },
   "name": "react-native-pjsip",
   "description": "PJSIP module for React Native",
-  "homepage": "https://github.com/tariq86/react-native-pjsip",
   "keywords": [
     "react-component",
     "react-native",
@@ -43,9 +53,6 @@
   "peerDependencies": {
     "react-native": ">=0.60.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tariq86/react-native-pjsip.git"
-  },
-  "version": "3.0.0"
+  "repository": "github:tariq86/react-native-pjsip",
+  "version": "3.1.0"
 }
