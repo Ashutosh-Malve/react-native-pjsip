@@ -4,10 +4,7 @@
     "lint": "eslint ./src",
     "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
-  "author": {
-    "name": "Tariq86",
-    "email": "tariq.86@pm.me"
-  },
+  "author": "Tariq86",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/tariq86/react-native-pjsip/issues"
