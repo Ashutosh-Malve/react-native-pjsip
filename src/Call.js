@@ -2,14 +2,30 @@
  * This class describes the information and current status of a call.
  */
 export default class Call {
-
     constructor({
-        id, callId, accountId,
-        localContact, localUri, remoteContact, remoteUri,
-        state, stateText, held, muted, speaker,
-        connectDuration, totalDuration,
-        remoteOfferer, remoteAudioCount, remoteVideoCount, audioCount, videoCount,
-        lastStatusCode, lastReason, media, provisionalMedia
+        id,
+        callId,
+        accountId,
+        localContact,
+        localUri,
+        remoteContact,
+        remoteUri,
+        state,
+        stateText,
+        held,
+        muted,
+        speaker,
+        connectDuration,
+        totalDuration,
+        remoteOfferer,
+        remoteAudioCount,
+        remoteVideoCount,
+        audioCount,
+        videoCount,
+        lastStatusCode,
+        lastReason,
+        media,
+        provisionalMedia,
     }) {
         let remoteNumber = null;
         let remoteName = null;
@@ -83,7 +99,6 @@ export default class Call {
     getCallId() {
         return this._callId;
     }
-
 
     /**
      * Up-to-date call duration in seconds.
@@ -377,16 +392,16 @@ export default class Call {
         if (isNaN(seconds) || seconds < 0) {
             return '00:00';
         }
-        var hours = parseInt( seconds / 3600 ) % 24;
-        var minutes = parseInt( seconds / 60 ) % 60;
+        var hours = parseInt(seconds / 3600) % 24;
+        var minutes = parseInt(seconds / 60) % 60;
         var result = '';
         seconds = seconds % 60;
 
         if (hours > 0) {
             result += (hours < 10 ? '0' + hours : hours) + ':';
         }
-
-        result += (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds  < 10 ? '0' + seconds : seconds);
+        result += (minutes < 10 ? '0' + minutes : minutes) + ':';
+        result += seconds < 10 ? '0' + seconds : seconds;
         return result;
     }
 }

@@ -1,5 +1,5 @@
-import React, {DeviceEventEmitter, NativeModules} from 'react-native';
-import {EventEmitter} from 'events'
+import React, { DeviceEventEmitter, NativeModules } from 'react-native';
+import { EventEmitter } from 'events'
 
 import Call from './Call'
 import Message from './Message'
@@ -68,7 +68,7 @@ export default class Endpoint extends EventEmitter {
      * @returns {Promise}
      */
     start(configuration) {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.start(configuration, (successful, data) => {
                 if (successful) {
                     let accounts = [];
@@ -107,7 +107,7 @@ export default class Endpoint extends EventEmitter {
     }
 
     updateStunServers(accountId, stunServerList) {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.updateStunServers(accountId, stunServerList, (successful, data) => {
                 if (successful) {
                     resolve(data);
@@ -123,7 +123,7 @@ export default class Endpoint extends EventEmitter {
      * @returns {Promise}
      */
     changeNetworkConfiguration(configuration) {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.changeNetworkConfiguration(configuration, (successful, data) => {
                 if (successful) {
                     resolve(data);
@@ -139,7 +139,7 @@ export default class Endpoint extends EventEmitter {
      * @returns {Promise}
      */
     changeServiceConfiguration(configuration) {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.changeServiceConfiguration(configuration, (successful, data) => {
                 if (successful) {
                     resolve(data);
@@ -172,7 +172,7 @@ export default class Endpoint extends EventEmitter {
      * @returns {Promise}
      */
     createAccount(configuration) {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.createAccount(configuration, (successful, data) => {
                 if (successful) {
                     resolve(new Account(data));
@@ -197,7 +197,7 @@ export default class Endpoint extends EventEmitter {
      * @returns {Promise}
      */
     registerAccount(account, renew = true) {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.registerAccount(account.getId(), renew, (successful, data) => {
                 if (successful) {
                     resolve(data);
@@ -215,7 +215,7 @@ export default class Endpoint extends EventEmitter {
      * @returns {Promise}
      */
     deleteAccount(account) {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.deleteAccount(account.getId(), (successful, data) => {
                 if (successful) {
                     resolve(data);
@@ -241,7 +241,7 @@ export default class Endpoint extends EventEmitter {
     makeCall(account, destination, callSettings, msgData) {
         destination = this._normalize(account, destination);
 
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             NativeModules.PjSipModule.makeCall(account.getId(), destination, callSettings, msgData, (successful, data) => {
                 if (successful) {
                     resolve(new Call(data));
@@ -518,24 +518,24 @@ export default class Endpoint extends EventEmitter {
     }
 
     changeOrientation(orientation) {
-      const orientations = [
-        'PJMEDIA_ORIENT_UNKNOWN',
-        'PJMEDIA_ORIENT_ROTATE_90DEG',
-        'PJMEDIA_ORIENT_ROTATE_270DEG',
-        'PJMEDIA_ORIENT_ROTATE_180DEG',
-        'PJMEDIA_ORIENT_NATURAL'
-      ]
+        const orientations = [
+            'PJMEDIA_ORIENT_UNKNOWN',
+            'PJMEDIA_ORIENT_ROTATE_90DEG',
+            'PJMEDIA_ORIENT_ROTATE_270DEG',
+            'PJMEDIA_ORIENT_ROTATE_180DEG',
+            'PJMEDIA_ORIENT_NATURAL'
+        ]
 
-      if (orientations.indexOf(orientation) === -1) {
-        throw new Error(`Invalid ${JSON.stringify(orientation)} device orientation, but expected ${orientations.join(", ")} values`)
-      }
+        if (orientations.indexOf(orientation) === -1) {
+            throw new Error(`Invalid ${JSON.stringify(orientation)} device orientation, but expected ${orientations.join(", ")} values`)
+        }
 
-      NativeModules.PjSipModule.changeOrientation(orientation)
+        NativeModules.PjSipModule.changeOrientation(orientation)
     }
 
     changeCodecSettings(codecSettings) {
-        return new Promise(function(resolve, reject) {
-        NativeModules.PjSipModule.changeCodecSettings(codecSettings, (successful, data) => {
+        return new Promise(function (resolve, reject) {
+            NativeModules.PjSipModule.changeCodecSettings(codecSettings, (successful, data) => {
                 if (successful) {
                     resolve(data);
                 } else {

@@ -2,15 +2,7 @@
  * This class describes the information and current status of a call.
  */
 export default class Message {
-
-    constructor({
-        accountId,
-        contactUri,
-        fromUri,
-        toUri,
-        body,
-        contentType
-    }) {
+    constructor({ accountId, contactUri, fromUri, toUri, body, contentType }) {
         let fromNumber = null;
         let fromName = null;
 
@@ -102,5 +94,4 @@ export default class Message {
     getContentType() {
         return this._contentType;
     }
-
 }
